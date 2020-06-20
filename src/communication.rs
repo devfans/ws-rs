@@ -34,6 +34,14 @@ pub struct Command {
 }
 
 impl Command {
+    pub fn new(token: Token, signal: Signal, connection_id: u32) -> Self {
+        Self {
+            token,
+            signal,
+            connection_id,
+        }
+    }
+
     pub fn token(&self) -> Token {
         self.token
     }
@@ -52,7 +60,7 @@ impl Command {
 #[derive(Clone)]
 pub struct Sender {
     token: Token,
-    channel: mio::channel::SyncSender<Command>,
+    pub channel: mio::channel::SyncSender<Command>,
     connection_id: u32,
 }
 

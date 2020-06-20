@@ -39,7 +39,7 @@ pub mod util;
 pub use factory::Factory;
 pub use handler::Handler;
 
-pub use communication::Sender;
+pub use communication::{ Sender, Command, Signal };
 pub use frame::Frame;
 pub use handshake::{Handshake, Request, Response};
 pub use message::Message;
